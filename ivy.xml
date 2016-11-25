@@ -1,0 +1,22 @@
+<ivy-module version="2.0" xmlns:d="http://corefiling.com/products/decimate/ivy-extra">
+   <info organisation="com.corefiling" module="multiprocesssafehilooptimizer" branch="trunk"/>
+   <configurations>
+     <conf name="runtime" />
+     <conf name="test" />
+     <conf name="sources" />
+     <conf name="dist" />
+   </configurations>
+   <publications>
+     <artifact d:relativePath="lib" name="multiprocesssafehilooptimizer" type="jar" conf="dist" ext="jar"/>
+   </publications>
+   <dependencies>
+     <dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.10.Final" conf="runtime->default">
+       <exclude org="xml-apis" module="xml-apis"/>
+     </dependency>
+     <dependency org="org.hibernate" name="hibernate-jpamodelgen" rev="4.3.10.Final" conf="runtime->default">
+       <!-- These are included in the main Hibernate dependency above. -->
+       <exclude org="org.jboss.logging" module="jboss-logging"/>
+       <exclude org="org.jboss.logging" module="jboss-logging-annotations"/>
+     </dependency>
+   </dependencies>
+</ivy-module>
