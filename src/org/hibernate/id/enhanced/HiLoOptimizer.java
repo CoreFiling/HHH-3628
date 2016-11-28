@@ -112,6 +112,9 @@ public class HiLoOptimizer extends AbstractOptimizer {
 		else if ( ! generationState.upperLimit.gt( generationState.value ) ) {
 			generationState.lastSourceValue = callback.getNextValue();
 			generationState.upperLimit = generationState.lastSourceValue.copy().multiplyBy( incrementSize ).increment();
+			// Don't blindly assume we got the previous sequence value plus 1!
+			// https://hibernate.atlassian.net/browse/HHH-3628
+			generationState.value = generationState.upperLimit.copy().subtract( incrementSize );
 		}
 		return generationState.value.makeValueThenIncrement();
 	}
