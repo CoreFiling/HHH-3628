@@ -20,6 +20,9 @@
  * Free Software Foundation, Inc.
  * 51 Franklin Street, Fifth Floor
  * Boston, MA  02110-1301  USA
+ *
+ * LGPL change notice:
+ * 2016-11-28 Chris Boyle, CoreFiling: added 1 line fix for HHH-3628.
  */
 package org.hibernate.id.enhanced;
 
